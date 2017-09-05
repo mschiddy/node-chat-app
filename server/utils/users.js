@@ -1,14 +1,8 @@
-[{
-	id: "ko8no", 
-	name: "Karen",
-	room: "Pizza"
-}]
-
 class Users {
 	constructor() {
-		this.users = [];
+		this.users = [];	
 	}
-	addUser(id, name, room){
+	addUser(id, name, room){ 
 		var user = {id, name, room};
 		this.users.push(user);
 		return(user);
@@ -29,6 +23,15 @@ class Users {
 		var namesArray = users.map((user) => user.name);
 		
 		return namesArray;
+	}
+	findUserNameByRoom(name, room){
+		var namesArray = this.users.map((user) => user.name);
+		
+		if (namesArray.includes(name)){
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
 
